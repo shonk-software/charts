@@ -1,0 +1,32 @@
+backend:
+  enabled: true
+
+  ingress:
+    enabled: false
+    hosts:
+      - host: "corewar.example.com"
+        paths:
+          - path: "/api"
+            backend:
+              serviceName: "backend"
+              servicePort: 8080
+    tls:
+      - secretName: "corewar-tls"
+        hosts:
+          - "corewar.example.com"
+frontend:
+  enabled: true
+  api_url: "/api"
+  ingress:
+    enabled: false
+    hosts:
+      - host: "corewar.example.com"
+        paths:
+          - path: "/"
+            backend:
+              serviceName: "frontend"
+              servicePort: 80
+    tls:
+      - secretName: "corewar-tls"
+        hosts:
+          - "corewar.example.com"
