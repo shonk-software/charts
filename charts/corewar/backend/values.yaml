@@ -5,7 +5,7 @@ replicaCount: 1
 image:
   repository: ghcr.io/shonk-software/corewar-backend-kotlin
   pullPolicy: Always
-  tag: latest
+  tag: latest@sha256:6301bba2f3b78da943841eb465ef13c5cb56502ee4bd1dc38faad755e1566ccd
 
 imagePullSecrets: []
 nameOverride: ""
