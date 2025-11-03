@@ -7,7 +7,7 @@ api_url: "/api"
 image:
   repository: ghcr.io/shonk-software/corewar-frontend-react
   pullPolicy: Always
-  tag: "latest"
+  tag: "latest@sha256:b48ceabdb8b93fb8555f4a2feb11fd00ac66381db52079d39ff89d5528c55784"
 
 imagePullSecrets: []
 nameOverride: ""
