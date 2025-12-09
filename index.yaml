@@ -2,6 +2,21 @@ apiVersion: v1
 entries:
   corewar:
   - apiVersion: v2
+    created: "2025-12-09T23:41:13.830798285Z"
+    dependencies:
+    - name: backend
+      repository: file://backend
+      version: 0.2.0
+    - name: frontend
+      repository: file://frontend
+      version: 0.1.0
+    description: A Helm chart for the corewar full-stack application
+    digest: 372c74a207048a23d1852c182f879147d8592aac42fbbc1f6effd15005d78181
+    name: corewar
+    urls:
+    - https://github.com/shonk-software/charts/releases/download/corewar-1.0.2/corewar-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
     created: "2025-11-03T16:53:10.784909705Z"
     dependencies:
     - name: backend
@@ -16,4 +31,4 @@ entries:
     urls:
     - https://github.com/shonk-software/charts/releases/download/corewar-1.0.1/corewar-1.0.1.tgz
     version: 1.0.1
-generated: "2025-11-03T16:53:10.784916127Z"
+generated: "2025-12-09T23:41:13.830806159Z"
