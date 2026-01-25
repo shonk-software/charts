@@ -21,15 +21,18 @@ podAnnotations: {}
 podLabels: {}
 
 podSecurityContext:
-  fsGroup: 2000
+  fsGroup: 20000
 
 securityContext:
   capabilities:
     drop:
-    - ALL
+      - ALL
   readOnlyRootFilesystem: true
+  allowPrivilegeEscalation: false
   runAsNonRoot: true
-  runAsUser: 1000
+  runAsUser: 10000
+  seccompProfile:
+    type: RuntimeDefault
 
 service:
   type: ClusterIP
@@ -69,11 +72,11 @@ readinessProbe:
     path: /api/v1/docs/scalar.html
     port: http
 
-volumes: 
+volumes:
   - name: tmp
     emptyDir: {}
 
-volumeMounts: 
+volumeMounts:
   - name: tmp
     mountPath: /tmp
 

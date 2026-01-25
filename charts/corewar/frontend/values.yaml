@@ -1,6 +1,6 @@
 enabled: true
 
-replicaCount: 3
+replicaCount: 1
 
 api_url: "/api"
 
@@ -23,15 +23,18 @@ podAnnotations: {}
 podLabels: {}
 
 podSecurityContext:
-  fsGroup: 2000
+  fsGroup: 20000
 
 securityContext:
   capabilities:
     drop:
-    - ALL
+      - ALL
   readOnlyRootFilesystem: true
+  allowPrivilegeEscalation: false
   runAsNonRoot: true
-  runAsUser: 1000
+  runAsUser: 10000
+  seccompProfile:
+    type: RuntimeDefault
 
 service:
   type: ClusterIP
@@ -72,13 +75,13 @@ readinessProbe:
     port: http
 
 autoscaling:
-  enabled: true
+  enabled: false
   minReplicas: 1
   maxReplicas: 10
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
-volumes: 
+volumes:
   - name: serve-tmp
     emptyDir: {}
   - name: nginx-cache
