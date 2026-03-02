@@ -19,7 +19,11 @@ spec:
     {{- range .Values.ingress.tls }}
     - hosts:
         {{- range .hosts }}
+        {{- if $.Values.ingress.prefix }}
         - {{ $.Values.ingress.prefix }}.{{ . }}
+        {{- else }}
+        - {{ . }}
+        {{- end }}
         {{- end }}
       secretName: {{ .secretName }}
     {{- end }}
