@@ -14,6 +14,13 @@ backend:
       - secretName: "corewar-tls"
         hosts:
           - "corewar.example.com"
+  httpRoute:
+    enabled: false
+    rules:
+    - matches:
+      - path:
+          type: PathPrefix
+          value: /api
 frontend:
   enabled: true
   api_url: "/api"
@@ -30,3 +37,10 @@ frontend:
       - secretName: "corewar-tls"
         hosts:
           - "corewar.example.com"
+  httpRoute:
+    enabled: false
+    rules:
+    - matches:
+      - path:
+          type: PathPrefix
+          value: /
